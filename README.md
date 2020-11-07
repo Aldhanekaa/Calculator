@@ -6,11 +6,11 @@
 
 <div align="center">
   <h3>
-    <a href="https://randomquotesmachine.netlify.app/">
+    <a href="https://freecodecamp-calculator.netlify.app/">
       Demo
     </a>
     <span> | </span>
-    <a href="https://{your-url-to-the-solution}">
+    <a href="https://github.com/Aldhanekaa/React.js-Calculator">
       Solution
     </a>
     <span> | </span>
@@ -37,7 +37,7 @@
 ![screenshot](preview.png)
 
 - Where can I see your demo?
-  You can see the [demo]() here!
+  You can see the [demo](https://freecodecamp-calculator.netlify.app/) here!
 - What was your experience?
   This is my amazing experience, because my problem solving skills was improved and my React.js skills was improved too!
 - What have you learned/improved? 
