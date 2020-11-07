@@ -26,7 +26,7 @@ class App extends Component {
         calc: '',
         currentValue: '',
         calcDisplay: '',
-        lastPressed: ''
+        lastPressed: '',
     }
     shouldComponentUpdate = () => {
         let { calcDisplay, currentValue, calc, lastPressed } = this.state;
