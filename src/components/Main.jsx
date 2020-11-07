@@ -20,7 +20,7 @@ const ids = {
     '-': 'subtract',
     '+': 'add'
 }
-
+const regex = /[\+\-\*\/]/;
 class App extends Component {
     state = {
         calc: '',
@@ -29,7 +29,7 @@ class App extends Component {
         lastPressed: ''
     }
     shouldComponentUpdate = () => {
-        let { calcDisplay, currentValue, calc, lastPressed } = this.state;
+        let { currentValue } = this.state;
         if (currentValue.length > 14) {
             return false
         }
@@ -42,13 +42,13 @@ class App extends Component {
         switch (innerText) {
             case '.':
                 let { calc: calcc, currentValue: cV, calcDisplay: cD } = this.state;
-                let copyOFCalcc = calcc.split(/[\+\-\*\/]/);
+                let copyOFCalcc = calcc.split(regex);
                 copyOFCalcc = copyOFCalcc[copyOFCalcc.length - 1];
                 if (copyOFCalcc.includes('.')) {
                     console.log('includes .')
                     // cV += '0';
                     // calcc += '0';
-                } else if (copyOFCalcc == '.') {
+                } else if (copyOFCalcc === '.') {
                     // nothing!
                 } else if (copyOFCalcc.split('')[0] === undefined) {
                     cV = '0.';
@@ -69,7 +69,7 @@ class App extends Component {
                 })
                 break;
             case '=':
-                let { calc, currentValue, calcDisplay } = this.state;
+                let { calc, calcDisplay } = this.state;
 
                 let result = eval(calc);
                 calcDisplay += ('=' + result);
@@ -116,14 +116,14 @@ class App extends Component {
                     }
                     const c = calc.split('')
 
-                    const splitted = calc.split(/[\+\-\*\/]/);
-                    calc = c.slice(c.findIndex(e => e == '.' || e > 0)).join('');
+                    const splitted = calc.split(regex);
+                    calc = c.slice(c.findIndex(e => e === '.' || e > 0)).join('');
                     // calcDisplay = calc;
                     // console.log('splitted===');
                     // console.log(splitted)
                     calcDisplay = calc;
 
-                    if (splitted.length == 1 && calcDisplay == 0) {
+                    if (splitted.length === 1 && calcDisplay === 0) {
                         currentValue = '0';
                     } else {
                         currentValue = splitted[splitted.length - 1];
@@ -147,7 +147,7 @@ class App extends Component {
     }
 
     render() {
-        const { calc, currentValue, calcDisplay } = this.state
+        const { currentValue, calcDisplay } = this.state
         return (
             <Fragment>
                 <div className="calculator">
