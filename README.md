@@ -57,6 +57,8 @@
 
 <!-- List the features of your application or follow the template. Don't share the figma file here :) -->
 
+- [] Dark Mode (Coming Soon)
+
 This application was created as a submission to a [FreeCodeCamp](https://www.freecodecamp.org) project. The [challenge](https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-javascript-calculator) was to build an application to complete the given user stories.
 
 
